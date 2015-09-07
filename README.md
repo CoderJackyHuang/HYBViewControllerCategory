@@ -5,7 +5,10 @@
 * 常用的UINavigationBar的配置API，适配iOS6.0
 * 常用的UITabBar的tabbaritem的配置API，适配iOS6.0
 * 常用的UINavigationItem的导航配置API，block版本简单易用
-* 
+
+##截屏
+![image](https://github.com/632840804/HYBViewControllerCategory/blob/master/screen.png)
+
 ##安装使用
 ```
 pod 'HYBViewControllerCategory', '~> 0.0.1'
