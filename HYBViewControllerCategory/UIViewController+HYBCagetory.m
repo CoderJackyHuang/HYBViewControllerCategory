@@ -82,7 +82,16 @@ static CGFloat sg_navButtonCornerRadius;
           image = backImage;
         }
         
-        UIImage *backButtonImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 30, 0, 30)];
+        CGFloat w = image.size.width;
+        if ([UIScreen mainScreen].bounds.size.width <= 320) {
+          w = 30;
+        }
+        UIImage *backButtonImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, w, 0, -w)];
+        [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
+                                                          forState:UIControlStateNormal
+                                                        barMetrics:UIBarMetricsDefault];
+        navBar.backIndicatorImage = image;
+
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
                                                           forState:UIControlStateNormal
                                                         barMetrics:UIBarMetricsDefault];

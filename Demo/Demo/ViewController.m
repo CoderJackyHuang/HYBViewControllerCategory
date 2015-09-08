@@ -23,11 +23,19 @@
   
   HYBFirstController *first = [[HYBFirstController alloc] init];
   HYBNavigationController *firstNav = [[HYBNavigationController alloc] initWithRootViewController:first];
-  [firstNav hyb_setTabBarItemWithTitle:@"第一个" selectedImage:nil unSelectedImage:@"warning" selectedTextColor:[UIColor redColor] unSelectedTextColor:nil];
+  [firstNav hyb_setTabBarItemWithTitle:@"第一个"
+                         selectedImage:nil
+                       unSelectedImage:@"warning"
+                     selectedTextColor:[UIColor redColor]
+                   unSelectedTextColor:nil];
   
   HYBSecondController *second = [[HYBSecondController alloc] init];
   HYBNavigationController *secNav = [[HYBNavigationController alloc] initWithRootViewController:second];
-  [secNav hyb_setTabBarItemWithTitle:@"第二个" selectedImage:nil unSelectedImage:@"clock" selectedTextColor:[UIColor redColor] unSelectedTextColor:nil];
+  [secNav hyb_setTabBarItemWithTitle:@"第二个"
+                       selectedImage:nil
+                     unSelectedImage:@"clock"
+                   selectedTextColor:[UIColor redColor]
+                 unSelectedTextColor:nil];
 
   self.viewControllers = @[firstNav, secNav];
 }
