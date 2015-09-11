@@ -95,6 +95,10 @@ static CGFloat sg_navButtonCornerRadius;
         [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
                                                           forState:UIControlStateNormal
                                                         barMetrics:UIBarMetricsDefault];
+        // 将返回标题设置为很小，否则当上一个界面的标题很长时，会出现下一个界面的标题不居中显示的问题
+        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:0.5]};
+        [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
+                                                    forState:UIControlStateNormal];
       }
       
       // 将返回按钮的文字position设置不在屏幕上显示
