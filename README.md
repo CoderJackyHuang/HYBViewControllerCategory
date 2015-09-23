@@ -11,7 +11,7 @@
 
 ##安装使用
 ```
-pod 'HYBViewControllerCategory', '~> 0.0.1'
+pod 'HYBViewControllerCategory', '~> 0.1.2'
 ```
 或者直接将HYBViewControllerCategory源文件夹放到您的工程中
 
