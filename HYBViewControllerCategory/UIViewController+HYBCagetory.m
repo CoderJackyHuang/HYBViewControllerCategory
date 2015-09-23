@@ -172,6 +172,41 @@ static CGFloat sg_navButtonCornerRadius;
 - (void)hyb_setTabBarItemWithTitle:(NSString *)title
                      selectedImage:(id)selectedImage
                    unSelectedImage:(id)unSelectedImage
+                         imageMode:(UIImageRenderingMode)imageMode
+                 selectedTextColor:(UIColor *)selectedTextColor
+               unSelectedTextColor:(UIColor *)unSelectedTextColor {
+  [self hyb_setTabBarItemWithTitle:title
+                     selectedImage:selectedImage
+                   unSelectedImage:unSelectedImage
+                         imageMode:imageMode
+                 selectedTextColor:selectedTextColor
+               unSelectedTextColor:unSelectedTextColor
+                      selectedFont:nil
+                    unSelectedFont:nil];
+}
+
+
+- (void)hyb_setTabBarItemWithTitle:(NSString *)title
+                     selectedImage:(id)selectedImage
+                   unSelectedImage:(id)unSelectedImage
+                 selectedTextColor:(UIColor *)selectedTextColor
+               unSelectedTextColor:(UIColor *)unSelectedTextColor
+                      selectedFont:(UIFont *)selectedFont
+                    unSelectedFont:(UIFont *)unSelectedFont {
+  [self hyb_setTabBarItemWithTitle:title
+                     selectedImage:selectedImage
+                   unSelectedImage:unSelectedImage
+                         imageMode:UIImageRenderingModeAlwaysOriginal
+                 selectedTextColor:selectedTextColor
+               unSelectedTextColor:unSelectedTextColor
+                      selectedFont:selectedFont
+                    unSelectedFont:unSelectedFont];
+}
+
+- (void)hyb_setTabBarItemWithTitle:(NSString *)title
+                     selectedImage:(id)selectedImage
+                   unSelectedImage:(id)unSelectedImage
+                         imageMode:(UIImageRenderingMode)imageMode
                  selectedTextColor:(UIColor *)selectedTextColor
                unSelectedTextColor:(UIColor *)unSelectedTextColor
                       selectedFont:(UIFont *)selectedFont
@@ -199,11 +234,11 @@ static CGFloat sg_navButtonCornerRadius;
   
   if (kIOSVersion >= 7) {
     if (selectedImg) {
-      item.selectedImage = [selectedImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+      item.selectedImage = [selectedImg imageWithRenderingMode:imageMode];
     }
     
     if (normalImg) {
-      item.image = [normalImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+      item.image = [normalImg imageWithRenderingMode:imageMode];
     }
     
     NSMutableDictionary *titleSelectedAttributes = [[NSMutableDictionary alloc] init];
@@ -260,6 +295,7 @@ static CGFloat sg_navButtonCornerRadius;
   
   self.tabBarItem = item;
 }
+
 
 #pragma mark - UINavigationBar or UINavigationItem
 - (void)hyb_navWithTitle:(id)title {

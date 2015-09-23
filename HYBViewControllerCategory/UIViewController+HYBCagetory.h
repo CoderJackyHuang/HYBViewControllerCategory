@@ -28,7 +28,7 @@ typedef void(^HYBButtonArrayBlock)(NSUInteger atIndex, UIButton *sender);
  *  @note Make friends with me：
  *        QQ:(632840804)
  *        Please tell me your real name when you send message to me.3Q.
- * 
+ *
  *  @since v0.1
  */
 @interface UIViewController (HYBCagetory)
@@ -92,6 +92,24 @@ typedef void(^HYBButtonArrayBlock)(NSUInteger atIndex, UIButton *sender);
  * @param title 标题
  * @param selectedImage 选中时的图片名称或者图片对象
  * @param unSelectedImage 普通状态下的图片名称或者图片对象
+ * @param imageMode       图片呈现模式
+ * @param selectedTextColor 选中时的标题颜色
+ * @param unSelectedTextColor 普通状态下的标题颜色
+ */
+- (void)hyb_setTabBarItemWithTitle:(NSString *)title
+                     selectedImage:(id)selectedImage
+                   unSelectedImage:(id)unSelectedImage
+                         imageMode:(UIImageRenderingMode)imageMode
+                 selectedTextColor:(UIColor *)selectedTextColor
+               unSelectedTextColor:(UIColor *)unSelectedTextColor;
+
+/**
+ * 创建一个UITabBarItem对象，并赋值给controller。使用场景：一般是导航控制器类调用。
+ * 此API适配了IOS6.0及其以上版本
+ *
+ * @param title 标题
+ * @param selectedImage 选中时的图片名称或者图片对象
+ * @param unSelectedImage 普通状态下的图片名称或者图片对象
  * @param selectedTextColor 选中时的标题颜色
  * @param unSelectedTextColor 普通状态下的标题颜色
  * @param selectedFont 选中时的标题字体
@@ -104,6 +122,29 @@ typedef void(^HYBButtonArrayBlock)(NSUInteger atIndex, UIButton *sender);
                unSelectedTextColor:(UIColor *)unSelectedTextColor
                       selectedFont:(UIFont *)selectedFont
                     unSelectedFont:(UIFont *)unSelectedFont;
+
+/**
+ * 创建一个UITabBarItem对象，并赋值给controller。使用场景：一般是导航控制器类调用。
+ * 此API适配了IOS6.0及其以上版本
+ *
+ * @param title 标题
+ * @param selectedImage 选中时的图片名称或者图片对象
+ * @param unSelectedImage 普通状态下的图片名称或者图片对象
+ * @param imageMode       图片呈现模式
+ * @param selectedTextColor 选中时的标题颜色
+ * @param unSelectedTextColor 普通状态下的标题颜色
+ * @param selectedFont 选中时的标题字体
+ * @param unSelectedFont 普通状态下的标题字体
+ */
+- (void)hyb_setTabBarItemWithTitle:(NSString *)title
+                     selectedImage:(id)selectedImage
+                   unSelectedImage:(id)unSelectedImage
+                         imageMode:(UIImageRenderingMode)imageMode
+                 selectedTextColor:(UIColor *)selectedTextColor
+               unSelectedTextColor:(UIColor *)unSelectedTextColor
+                      selectedFont:(UIFont *)selectedFont
+                    unSelectedFont:(UIFont *)unSelectedFont;
+
 
 #pragma mark - UINavigationBar or UINavigationItem
 /**
